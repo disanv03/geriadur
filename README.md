@@ -18,8 +18,20 @@ Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
     # da skouer
     geriadurell -fav kousket
 
+    # lakait etre c'hromelloù pa vez ur skrap
     geriadurell -h "albac'henn"
 ```
+
+#### Staliañ
+
+Roit da INSTALLATION_PATH="" e lec'h staliañ (etre c'hromelloù). Mod-se e c'hello ar program kavout pep fichennaoueg.
+
+```sh
+    git clone https://github.com/disanv03/geriadur.git
+    cd geriadur
+    ./geriadurell -h amprevan
+```
+Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit an "issues" amañ war github.
 
 #### Dalc'h pakajoù
 
@@ -40,7 +52,7 @@ Pakajoù, programmoù, a levraouegoù da staliañ evit e mont en dro:
 
 #### AOTRE
 
-Copyright (C) 2024 gweno_LF gnuno_03@hotmail.com  
+Copyright (C) 2024 GLF gnuno_03@hotmail.com  
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
