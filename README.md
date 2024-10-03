@@ -2,13 +2,13 @@
 
 Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
 
-- War **Devri** gant dibab -dev
-- War **Favreau** gant dibab -fav
-- War **Brezhoneg21" gant -21
-- War **Glosbe** gant -glo
-- Dibab -h evit klash gant an holl
+- War **Devri** gant dibab `-dev`
+- War **Favreau** gant dibab `-fav`
+- War **Brezhoneg21** gant `-21`
+- War **Glosbe** gant `-glo`
+- Dibab `-h` evit klash gant an holl
 
-#### Implij
+#### Implij
 
 ```sh
     geriadurell -geriadur ger_da_glask
