@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use HTML::TreeBuilder 5 -weak;
+
+# read html from std input
+my $html_content = do { local $/; <STDIN> };
+
+# get the search_term arguments
+my $search_term = $ARGV[0];
+my $title_search_term = uc($search_term);
+
+# INTRO
+print "\nBrezhoneg21:\n";
+
+# parse the html doc
+my $root = HTML::TreeBuilder->new_from_content($html_content);
+
+# find <span> with class="traduction"
+my @trad_span = $root->look_down(
+    '_tag' => 'span',
+    'class' => 'traduction'
+);
+
+# Occurrence settings
+my $counter = 0;
+my $max_occ = 3;
+
+# iterate over filtered <span> elements
+foreach my $span (@trad_span) {
+    last if $counter >= $max_occ;
+    my $content = $span->as_text;
+    print "$content\n";
+    $counter++;
+}
+
+# clean up, avoid memory leaks
+$root->delete;
+

@@ -1,0 +1,86 @@
+#!/bin/bash
+
+INSTALLATION_PATH="/home/username/geriadur/"
+
+# usage:
+function usage() {
+    echo "Usage: $0 [-fav] [-dev] [-glo] [-21] [-h] search_term"
+    echo "Options:"
+    echo "  -fav    use favereau dictionary"
+    echo "  -dev    use devri dictionary"
+    echo "  -glo    use glosbe dictionary"
+    echo "  -21     use brezhoneg21 dictionary"
+    echo "  -h      use all of them"
+    echo "  search_term is required."
+    exit 1
+}
+
+DICTIONARY=""
+SEARCH_TERM=""
+# parse options
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -fav)
+            DICTIONARY="fav"
+            shift
+            ;;
+        -dev)
+            DICTIONARY="dev"
+            shift
+            ;;
+        -glo)
+            DICTIONARY="glo"
+            shift
+            ;;
+        -21)
+            DICTIONARY="21"
+            shift
+            ;;
+        -h)
+            DICTIONARY="all"
+            shift
+            ;;
+        *)
+            usage
+            ;;
+    esac
+    if [[ -n "$DICTIONARY" && -n "$1" ]]; then
+        SEARCH_TERM="$1"
+        break
+    fi
+done
+
+# web scraping and format data
+function process_dictionary() {
+    local dictionary=$1
+    local search_term=$2
+    local url
+
+    case $dictionary in
+        fav)
+            url="http://www.arkaevraz.net/dicobzh/index.php?ifr=&b_lang=1&b_kw=$search_term&b_port=1&b_srch=1&b_mut=1&b_arb=0"
+            ;;
+        dev) url="https://devri.bzh/recherche/?q=$search_term&submit="
+            ;;
+        glo)
+            url="https://glosbe.com/br/fr/$search_term"
+            ;;
+        21)
+            url="https://www.brezhoneg21.com/geriadurBG.php?brezhoneg=$search_term"
+            ;;
+    esac
+
+    # curl (--silent) and perl format
+    curl -s "$url" | perl "${INSTALLATION_PATH}x_${dictionary}" "$search_term"
+}
+
+# Execute the appropriate action based on the dictionary
+if [ "$DICTIONARY" == "all" ]; then
+    for dict in fav dev glo 21; do
+        process_dictionary $dict $SEARCH_TERM
+    done
+else
+    process_dictionary $DICTIONARY $SEARCH_TERM
+fi
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use HTML::TreeBuilder 5 -weak;
+
+# read html from std input
+my $html_content = do { local $/; <STDIN> };
+
+# get the search_term arguments
+my $search_term = $ARGV[0];
+my $title_search_term = uc($search_term);
+
+# INTRO
+print "\nGLOSBE:\n";
+
+# parse the html doc
+my $root = HTML::TreeBuilder->new_from_content($html_content);
+
+# find <p> with id="content-summary" 
+my $summary_p = $root->look_down('_tag' => 'p', 'id' => 'content-summary');
+
+# check if found and search for nested <strong> element
+if (defined $summary_p) {
+    my $strong_element = $summary_p->look_down('_tag' => 'strong');
+    if (defined $strong_element) {
+        my $strong_content = $strong_element->as_text;
+        print $strong_content."\n";
+    }
+}
+
+
+# clean up, avoid memory leaks
+$root->delete;
+

@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use HTML::TreeBuilder 5 -weak;
+
+# read html from std input
+my $html_content = do { local $/; <STDIN> };
+
+# get the search_term arguments
+my $search_term = $ARGV[0];
+my $title_search_term = uc($search_term);
+
+# INTRO
+print "\nFAVEREAU:\n";
+
+# parse the html doc
+my $root = HTML::TreeBuilder->new_from_content($html_content);
+
+# find all <td> elements with pattern valgin=top and search_item
+my @td_elements = $root->look_down('_tag' => 'td', 'valign' => 'top');
+
+# iterate over <td> elements to find the desired pattern
+for (my $i = 0; $i < @td_elements; $i++) {
+    my $td = $td_elements[$i];
+    if ($td->as_text =~ /^$title_search_term\s$/) {
+        my $next_td = $td_elements[$i+1];
+        if (defined $next_td) {
+            my $content = $next_td->as_text;
+            print "$search_term: $content\n";
+        }
+    }
+}
+
+
+$root->delete;
+

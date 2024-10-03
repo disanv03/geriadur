@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use HTML::TreeBuilder 5 -weak;
+
+# read html from std input
+my $html_content = do { local $/; <STDIN> };
+
+# get the search_term arguments
+my $search_term = $ARGV[0];
+my $title_search_term = uc($search_term);
+
+# INTRO
+print "\nDEVRI:\n";
+
+# parse the html doc
+my $root = HTML::TreeBuilder->new_from_content($html_content);
+
+# find all <p> elements that start with (1), (2), (3)
+my @numbered_p = grep { $_->as_text =~ /^\([123]\)/
+} $root->look_down('_tag' => 'p');
+
+# Occurrence settings
+my $counter = 0;
+my $max_occ = 3;
+
+# iterate over filtered <p> elements
+foreach my $p (@numbered_p) {
+    last if $counter >= $max_occ;
+    my $content = $p->as_text;
+    print "$content\n";
+    $counter++;
+}
+
+# clean up, avoid memory leaks
+$root->delete;
+
