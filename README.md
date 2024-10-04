@@ -2,10 +2,10 @@
 
 Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
 
-- War **Devri** gant dibab `-dev`
-- War **Favreau** gant dibab `-fav`
+- War **Devri** gant dibab `-d`
+- War **Favreau** gant dibab `-f`
 - War **Brezhoneg21** gant `-21`
-- War **Glosbe** gant `-glo`
+- War **Glosbe** gant `-g`
 - Dibab `-h` evit klash gant an holl
 
 #### Implij
@@ -24,14 +24,14 @@ Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
 
 #### Staliañ
 
-Roit da INSTALLATION_PATH="" e lec'h staliañ (etre c'hromelloù). Mod-se e c'hello ar program kavout pep fichennaoueg.
+Roit da `INSTALLATION_PATH=""` e lec'h staliañ (etre c'hromelloù). Mod-se e c'hello ar program kavout pep fichennaoueg.
 
 ```sh
     git clone https://github.com/disanv03/geriadur.git
     cd geriadur
     ./geriadurell -h amprevan
 ```
-Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit an "issues" amañ war github.
+Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit un "issues" amañ war github.
 
 #### Dalc'h pakajoù
 

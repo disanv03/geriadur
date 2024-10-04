@@ -1,15 +1,15 @@
 #!/bin/bash
 
-INSTALLATION_PATH="/home/username/geriadur/"
+INSTALLATION_PATH="/home/zaza/gnome/geriadur/"
 
 # usage:
 function usage() {
-    echo "Usage: $0 [-fav] [-dev] [-glo] [-21] [-h] search_term"
+    echo "Usage: $0 [-f] [-d] [-g] [-21] [-h] search_term"
     echo "Options:"
-    echo "  -fav    use favereau dictionary"
-    echo "  -dev    use devri dictionary"
-    echo "  -glo    use glosbe dictionary"
-    echo "  -21     use brezhoneg21 dictionary"
+    echo "  -f    use favereau dictionary"
+    echo "  -d    use devri dictionary"
+    echo "  -g    use glosbe dictionary"
+    echo "  -21   use brezhoneg21 dictionary"
     echo "  -h      use all of them"
     echo "  search_term is required."
     exit 1
@@ -20,15 +20,15 @@ SEARCH_TERM=""
 # parse options
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        -fav)
+        -f)
             DICTIONARY="fav"
             shift
             ;;
-        -dev)
+        -d)
             DICTIONARY="dev"
             shift
             ;;
-        -glo)
+        -g)
             DICTIONARY="glo"
             shift
             ;;
