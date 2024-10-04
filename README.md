@@ -29,6 +29,8 @@ Roit da `INSTALLATION_PATH=""` e lec'h staliañ (etre c'hromelloù). Mod-se e c'
 ```sh
     git clone https://github.com/disanv03/geriadur.git
     cd geriadur
+    # digorit geriadurell
+    INSTALLATION_PATH="lech/stalian/geriadur/"
     ./geriadurell -h amprevan
 ```
 Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit un "issues" amañ war github.
