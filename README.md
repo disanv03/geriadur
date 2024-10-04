@@ -15,8 +15,8 @@ Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
 ```
 
 ```sh
-    # da skouer
-    geriadurell -fav kousket
+    # da skouer, klask war Favreau
+    geriadurell -f kousket
 
     # lakait etre c'hromelloù pa vez ur skrap
     geriadurell -h "albac'henn"
