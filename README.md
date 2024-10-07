@@ -13,15 +13,15 @@ Geriadurell ur benveg evit furchal buan war geriaduroù liesseurt.
 [Video Youtube - Implij ar Geriadur](https://www.youtube.com/watch?v=LDYeOZpvr8Q)
 
 ```sh
-    geriadurell -geriadur ger_da_glask
+    ./bzh -geriadur ger_da_glask
 ```
 
 ```sh
     # da skouer, klask war Favreau
-    geriadurell -f kousket
+    ./bzh -f kousket
 
     # lakait etre c'hromelloù pa vez ur skrap
-    geriadurell -h "albac'henn"
+    ./bzh -h "albac'henn"
 ```
 
 #### Staliañ
@@ -31,9 +31,9 @@ Roit da `INSTALLATION_PATH=""` e lec'h staliañ (etre c'hromelloù). Mod-se e c'
 ```sh
     git clone https://github.com/disanv03/geriadur.git
     cd geriadur
-    # digorit geriadurell
+    # Roit lec'h resis ar geriadur:
     INSTALLATION_PATH="lech/stalian/geriadur/"
-    ./geriadurell -h amprevan
+    ./bzh -h amprevan
 ```
 Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit un "issues" amañ war github.
 
