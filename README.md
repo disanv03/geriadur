@@ -1,6 +1,6 @@
 # Geriadur e Brezhoneg war termenell
 
-Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
+Geriadurell ur benveg evit furchal buan war geriaduroù liesseurt.
 
 - War **Devri** gant dibab `-d`
 - War **Favreau** gant dibab `-f`
@@ -9,6 +9,8 @@ Geriadurell ur benveg evit furchal buan en geriaduroù liesseurt.
 - Dibab `-h` evit klash gant an holl
 
 #### Implij
+
+[Video Youtube - Implij ar Geriadur](https://www.youtube.com/watch?v=LDYeOZpvr8Q)
 
 ```sh
     geriadurell -geriadur ger_da_glask
