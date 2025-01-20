@@ -26,16 +26,29 @@ Geriadurell ur benveg evit furchal buan war geriaduroù liesseurt.
 
 #### Staliañ
 
-Roit da `INSTALLATION_PATH=""` e lec'h staliañ (etre c'hromelloù). Mod-se e c'hello ar program kavout pep fichennaoueg.
+Roit da `INSTALLATION_PATH=""` e lec'h staliañ (etre krochedigoù). Mod-se e c'hello ar program kavout pep fichennaoueg.
 
 ```sh
     git clone https://github.com/disanv03/geriadur.git
     cd geriadur
     # Roit lec'h resis ar geriadur:
+    # E-barzh fichennaoueg "bzh"
     INSTALLATION_PATH="lech/stalian/geriadur/"
     ./bzh -h amprevan
 ```
 Ma ho peus ezhomm sklaerder evit staliañ skrivit ur mail diñ pe digorit un "issues" amañ war github.
+
+
+Skouer staliañ war Arch Linux:
+
+```sh
+sudo pacman -S perl
+sudo cpan HTML::Tree
+
+# Mod-all gant yay
+sudo pacman -S yay
+yay -S perl-html-tree
+```
 
 #### Dalc'h pakajoù
 
